@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
 import {
   Box,
-  chakra,
   Container,
   Text,
   HStack,
@@ -10,41 +9,13 @@ import {
   useColorModeValue,
   useBreakpointValue,
   Heading,
-  Collapse, Divider, Button, Badge, Tag, TagLabel
+  Collapse, Divider, Button, Tag, TagLabel
 } from '@chakra-ui/react';
-import {useRouter} from 'next/router';
 import Head from "next/head";
 import {DottedSeparator} from "daoRoot/components/DottedSeparator";
 import {metaverseCourseDetails} from "daoRoot/assets/data/data";
+import {CourseQuarter} from "daoRoot/assets/types/types";
 
-const milestones = [
-  {
-    id: 1,
-    date: 'MARCH 30, 2022',
-    title: 'Chakra Hackathon',
-    description: `Winner of first ever ChakraUI Hackathon. On sait depuis longtemps que travailler avec du texte lisible et contenant du sens.`
-  },
-  {
-    id: 2,
-    date: 'July 30, 2021',
-    title: 'Open Source, first contribution',
-    description: `Fixing a typo, to fix a bug, contributing to Open Source and collaborating to improve technology for everyone, Ahmad's world changed again!.`
-  },
-  {
-    id: 3,
-    date: 'July 30, 2018',
-    title: 'Freelancing, started working for myself',
-    description:
-      'Ahmad starts his own business consulting for companies as a fullstack developer. Clients include UK Government departments, UK banks, global fintechs and startups.'
-  }
-];
-
-interface CardProps {
-  id: number;
-  title: string;
-  description: string;
-  date: string;
-}
 
 const CourseDetails = () => {
   const isMobile = useBreakpointValue({base: true, md: false});
@@ -96,7 +67,7 @@ const CourseDetails = () => {
   );
 };
 
-const Card = ({duration, quarterNumber, title, isCore, syllabus}) => {
+const Card = ({duration, quarterNumber, title, isCore, syllabus}: CourseQuarter) => {
     const isEvenId = quarterNumber % 2 == 0;
     let borderWidthValue = isEvenId ? '15px 15px 15px 0' : '15px 0 15px 15px';
     let leftValue = isEvenId ? '-15px' : 'unset';
@@ -113,7 +84,7 @@ const Card = ({duration, quarterNumber, title, isCore, syllabus}) => {
 
     return (
       <HStack
-        id={quarterNumber}
+        id={quarterNumber.toString()}
         flex={1}
         p={{base: 3, sm: 6}}
         bg={useColorModeValue('gray.50', 'gray.800')}
