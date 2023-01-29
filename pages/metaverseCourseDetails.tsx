@@ -174,7 +174,7 @@ const DetailCard = ({description}: { description: string }) => {
   return (
     <Box flex={{base: 0, md: 1}} p={{base: 0, md: 6}} bg="transparent" cursor={'pointer'}>
       <Collapse startingHeight={50} in={show} onClick={handleToggle}>
-        <Text noOfLines={!show && 2}>
+        <Text noOfLines={show ? 50 : 2}>
           {description}
         </Text>
       </Collapse>
