@@ -5,9 +5,7 @@ import {
   Stack,
   Flex, Text,
 } from '@chakra-ui/react';
-import CourseCard from "daoRoot/components/CourseCard";
 import React from "react";
-import {specializedTracks} from "daoRoot/assets/data/data";
 
 export default function SpecializedCourses() {
   return (
@@ -28,17 +26,17 @@ export default function SpecializedCourses() {
           Tracks
         </Heading>
         {/*Courses*/}
-        <Flex direction={'row'} flexWrap={'wrap'} justifyContent={'space-around'}>
-          {
-            specializedTracks.map((track, index) => {
-              return (
-                <CourseCard key={index} title={track.title} image={track.image} description={track.description}
-                            linkTo={track.linkTo}/>
-              )
-            })
-          }
+        {/*<Flex direction={'row'} flexWrap={'wrap'} justifyContent={'space-around'}>*/}
+        {/*  {*/}
+        {/*    specializedTracks.map((track, index) => {*/}
+        {/*      return (*/}
+        {/*        <CourseCard key={index} title={track.title} image={track.image} description={track.description}*/}
+        {/*                    linkTo={track.linkTo}/>*/}
+        {/*      )*/}
+        {/*    })*/}
+        {/*  }*/}
 
-        </Flex>
+        {/*</Flex>*/}
       </Stack>
     </Container>
   );
