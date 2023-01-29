@@ -13,6 +13,11 @@ export const dropdownData: DropdownData[] = [
         courseName: 'Developing Planet-Scale Web 2.0 Serverless Cloud Apps and APIs using Next.js 13 and Cloud Development Kit (CDK) for Terraform',
         subtitle: 'Quarter II',
         linkTo: 'metaverseCourseDetails#2',
+      },
+      {
+        courseName: 'Dollar Making Bootcamp - Full-Stack Template and API Product Development',
+        subtitle: 'Quarter III',
+        linkTo: 'metaverseCourseDetails#3',
       }],
   },
   {
@@ -28,6 +33,7 @@ export const dropdownData: DropdownData[] = [
 ];
 import TSLogo from '../images/Typescript-Logo-Small.png'
 import LambdaLogo from '../images/awslambda.webp'
+import DollarLogo from '../images/dollarLog.jpg'
 
 export const coreCoursesCards: CourseCardType[] = [
   {
@@ -46,7 +52,15 @@ export const coreCoursesCards: CourseCardType[] = [
     description: 'The objective of this course is to teach participants to develop customer-facing planet-scale Websites, Full-Stack Apps and templates, Dashboards, and Muti-Cloud Serverless APIs.The technologies covered in this course will include Next.js 13, Figma, Tailwind CSS, Chakra UI, tRPC, QraphQL, Prisma, Cockroachdb Serverless (PostgreSQL Compatible), AWS Serverless Technologies, and Cloud Development Kit for Terraform (CDKTF).',
     linkTo: 'metaverseCourseDetails#2',
     isCore: true,
-    quarter: "I"
+    quarter: "II"
+  },{
+    courseID: '1',
+    image: DollarLogo,
+    title: 'Dollar Making Bootcamp - Full-Stack Template and API Product Development',
+    description: 'Develop Web 3.0 Templates and GraphQL APIs to sell and earn Dollars',
+    linkTo: 'metaverseCourseDetails#',
+    isCore: true,
+    quarter: "III"
   },
 ]
 

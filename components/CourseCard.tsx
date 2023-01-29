@@ -28,8 +28,7 @@ const CourseCard = (props: CourseCardType) => {
         overflow="hidden"
         bg={useColorModeValue('white', 'gray.800')}
       >
-        <Image
-          src={props.image}
+        <Image src={props.image} alt={''}
           width="500"
           height="500"
         />
