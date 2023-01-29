@@ -3,9 +3,7 @@ import {
   Link,
   Box,
   Flex,
-  Stack,
   HStack,
-  Heading,
   Container,
   Icon,
   Text,
@@ -14,7 +12,7 @@ import {
   useColorModeValue,
   Accordion,
   AccordionButton,
-  AccordionPanel, AccordionItem, AccordionIcon, Divider
+  AccordionPanel, AccordionItem, AccordionIcon
 } from '@chakra-ui/react';
 import DropDownMenu from './DropdownMenu';
 import {FaGithub} from 'react-icons/fa';
@@ -29,18 +27,14 @@ const GITHUB_REPO_LINK = 'https://github.com/iabdulhannan/panaverse-dao-syllabus
 
 export default function Header() {
   const {isOpen, onOpen, onClose} = useDisclosure();
-  const text = useColorModeValue('gray.100', 'gray.900')
 
   return (
     <>
       <Box
         as="header"
-        bg={useColorModeValue('white', 'gray.800')}
+        bg={'white'}
         px={4}
-        boxShadow={useColorModeValue(
-          '0 4px 6px rgba(160, 174, 192, 0.6)',
-          '0 4px 6px rgba(9, 17, 28, 0.9)'
-        )}
+        boxShadow={'0 4px 6px rgba(160, 174, 192, 0.6)'}
         position="fixed"
         width="100%"
         zIndex="55"
@@ -96,7 +90,7 @@ export default function Header() {
                 {
                   dropdownData.map((data, index) => {
                     return (
-                      <AccordionItem>
+                      <AccordionItem key={index}>
                         <h2>
                           <AccordionButton>
                             <Text as="h6" fontWeight={'600'} flex={1} textAlign='left'>
