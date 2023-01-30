@@ -59,7 +59,7 @@ export default function Header() {
                          alt={'Panaverse Logo (Full)'}/>
                 </Box>
               </Link>
-              <HStack spacing={5}>
+              <Flex dir={'row'} justifyContent={'space-evenly'} alignItems={'center'} display={{base: 'none', md: 'flex'}} minWidth={"40%"}>
                 {
                   dropdownData.map((data, index) => {
                     return (
@@ -67,13 +67,13 @@ export default function Header() {
                     )
                   })
                 }
-              </HStack>
+              </Flex>
 
               <Link href={GITHUB_REPO_LINK} isExternal>
                 <Flex
                   as="button"
                   p="0.6rem"
-                  cursor="pointer"
+                  cursor="pointer" rounded={'full'}
                   _hover={{bg: useColorModeValue('gray.300', 'gray.600')}}
                   justify="center"
                 >

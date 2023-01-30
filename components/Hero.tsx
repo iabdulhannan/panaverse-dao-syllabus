@@ -5,19 +5,24 @@ import {
   Text,
   Button,
   Stack,
-  createIcon, Center,
+  Center,
 } from '@chakra-ui/react';
 import Link from "next/link";
-import HomeBg from "../assets/images/homebg.webp";
 
 export default function Hero() {
   return (
     <>
-      <Container position={'relative'} maxW={'3xl'} h={'calc(100vh)'} justifyContent={'center'}
-                 alignItems={"center"}>
+      <Container position={'relative'} maxW={'100%'} h={'calc(100vh)'} justifyContent={'center'}
+                 alignItems={"center"}
+                 backgroundPosition="center"
+                 backgroundRepeat="no-repeat"
+                 backgroundSize="contain"
+                 backgroundImage={{md: `url(/heroBG.png)`}}
+      >
         <Center h={'full'}>
 
           <Stack
+            maxW={{base: '3xl', md: '65%', lg: '3xl'}}
             as={Box}
             textAlign={'center'}
             spacing={{base: 8, md: 14}}
@@ -25,7 +30,7 @@ export default function Hero() {
           >
             <Heading
               fontWeight={600}
-              fontSize={{base: '3xl', sm: '4xl', md: '6xl'}}
+              fontSize={{base: '3xl', sm: '4xl', md: '5xl', lg: '6xl'}}
               lineHeight={'110%'}>
               <Text as={'span'} color={'panaverseRed'}>
                 Earn&nbsp;

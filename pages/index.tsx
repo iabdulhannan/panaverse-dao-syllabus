@@ -4,7 +4,7 @@ import {Box} from "@chakra-ui/react";
 import Hero from "daoRoot/components/Hero";
 import CoreCourses from "daoRoot/components/CoreCourses";
 import {SpecializedTrack} from "daoRoot/components/SpecializedTrack";
-// import favicon from '../assets/images/favicon_io/favicon.ico'
+
 export default function Home() {
   return (
     <>
@@ -12,13 +12,12 @@ export default function Home() {
         <title>Panaverse DAO Syllabus</title>
         <meta name="description" content="Panaverse DAO Syllabus"/>
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
-        <link rel="icon" type="image/x-icon" href={'/assets/images/favicon_io/favicon.ico'}/>
+        <link rel="icon" type="image/x-icon" href={'/favicon.ico'}/>
       </Head>
       <main>
         <Box textAlign="center" fontSize="xl" scrollBehavior={'smooth'}>
           <Hero/>
           <CoreCourses/>
-          {/*<SpecializedCourses/>*/}
           <SpecializedTrack/>
         </Box>
       </main>

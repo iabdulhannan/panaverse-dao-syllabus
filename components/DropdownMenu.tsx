@@ -1,6 +1,5 @@
 import {
   Stack,
-  Box,
   Popover,
   Link,
   Text,
@@ -16,19 +15,19 @@ import {FaChevronDown} from 'react-icons/fa';
 
 
 const DropDownMenu = (props: DropdownData) => {
-  const panaverseRed = useColorModeValue('panaverseRed', 'panaverseRed');
   const {onOpen, onClose, isOpen} = useDisclosure();
 
   return (
-    <Stack direction="row" spacing={4} display={{base: 'none', md: 'flex'}}>
+    <Stack direction="row" spacing={4} mx={2}>
       <Popover trigger="hover" placement="bottom-start" onOpen={onOpen} onClose={onClose}>
         <PopoverTrigger>
-          <HStack alignItems="center" cursor="pointer" role="group">
+          <HStack alignItems="center" cursor="pointer" role="group" w={'100%'}>
             <Link
+              w={'100%'}
               href="#"
               p={2}
               fontSize={{sm: 'md', md: 'lg'}}
-              fontWeight="bold"
+              fontWeight="semibold"
               color={useColorModeValue('gray.600', 'gray.200')}
               // _groupHover={{
               //   color: panaverseRed
@@ -71,7 +70,7 @@ const DropDownMenu = (props: DropdownData) => {
   );
 };
 
-const DropDownItem = ({courseName, linkTo, subtitle}:{courseName:string, linkTo:string, subtitle:string}) => {
+const DropDownItem = ({courseName, linkTo, subtitle}: { courseName: string, linkTo: string, subtitle: string }) => {
   return (
     <Link
       href={linkTo}
@@ -81,9 +80,9 @@ const DropDownItem = ({courseName, linkTo, subtitle}:{courseName:string, linkTo:
       _hover={{bg: useColorModeValue('gray.100', 'gray.900')}}
     >
       <Stack direction="row" align="center">
-        <VStack spacing={2}>
-          <Text noOfLines={2} textAlign={'left'}  fontWeight={500}>{courseName}</Text>
-          <Text fontSize="sm" textAlign={'left'}>{subtitle}</Text>
+        <VStack spacing={2} w={'100%'}>
+          <Text noOfLines={2} w={'100%'} textAlign={'left'} fontWeight={500}>{courseName}</Text>
+          <Text fontSize="sm" w={'100%'} textAlign={'left'}>{subtitle}</Text>
         </VStack>
       </Stack>
     </Link>
