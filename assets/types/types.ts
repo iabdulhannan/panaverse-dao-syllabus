@@ -29,3 +29,11 @@ export interface CourseQuarter {
     }
   >
 }
+
+export interface ProgramDetailType {
+  id: number,
+  title: string,
+  description: string,
+  quarters: CourseQuarter[]
+}
+

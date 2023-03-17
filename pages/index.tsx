@@ -3,7 +3,7 @@ import React from "react";
 import {Box} from "@chakra-ui/react";
 import Hero from "daoRoot/components/Hero";
 import CoreCourses from "daoRoot/components/CoreCourses";
-import {SpecializedTrack} from "daoRoot/components/SpecializedTrack";
+import {SpecializedTracks} from "daoRoot/components/SpecializedTracks";
 
 export default function Home() {
   return (
@@ -18,7 +18,7 @@ export default function Home() {
         <Box textAlign="center" fontSize="xl" scrollBehavior={'smooth'}>
           <Hero/>
           <CoreCourses/>
-          <SpecializedTrack/>
+          <SpecializedTracks/>
         </Box>
       </main>
     </>

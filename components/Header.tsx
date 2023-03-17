@@ -21,12 +21,13 @@ import {AiOutlineClose} from 'react-icons/ai';
 import Image from "next/image";
 import LOGO from "daoRoot/assets/images/panaverseDaoLogoTransparent.png"
 import {dropdownData} from "daoRoot/assets/data/data";
+import {useRouter} from "next/router";
 
 const GITHUB_REPO_LINK = 'https://github.com/iabdulhannan/panaverse-dao-syllabus';
 
-
 export default function Header() {
   const {isOpen, onOpen, onClose} = useDisclosure();
+  const router = useRouter();
 
   return (
     <>
@@ -53,7 +54,7 @@ export default function Header() {
                 bg={'transparent'}
               />
 
-              <Link href="./" marginRight={"80"}>
+              <Link onClick={()=> router.push('/')} marginRight={"80"}>
                 <Box cursor="pointer">
                   <Image src={LOGO} width={150} height={100}
                          alt={'Panaverse Logo (Full)'}/>

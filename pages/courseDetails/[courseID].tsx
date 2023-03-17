@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {
   Box,
   Container,
@@ -13,27 +13,51 @@ import {
 } from '@chakra-ui/react';
 import Head from "next/head";
 import {DottedSeparator} from "daoRoot/components/DottedSeparator";
-import {metaverseCourseDetails} from "daoRoot/assets/data/data";
-import {CourseQuarter} from "daoRoot/assets/types/types";
+import {metaverseCourseDetails, programDetail} from "daoRoot/assets/data/data";
+import {CourseQuarter, ProgramDetailType} from "daoRoot/assets/types/types";
+import {router} from "next/client";
+import {useRouter} from "next/router";
 
 
-const CourseDetails = () => {
+const CourseDetails = ({programQuarters}) => {
   const isMobile = useBreakpointValue({base: true, md: false});
   const isDesktop = useBreakpointValue({base: false, md: true});
+  const router = useRouter();
+  const {courseID} = router.query;
+  const [program] = useState<ProgramDetailType>(programQuarters);
+
+  // useEffect(() => {
+  //   console.log("programQuarters", programQuarters)
+  // }, []);
+
+  // useEffect(() => {
+  //   // console.log('Course ID: ', courseID)
+  //   if (courseID) {
+  //     const programQuarters = programDetail.find((item) => item.id.toString() === courseID.toString())
+  //     // alert(JSON.stringify(programQuarters))
+  //     setProgram(programQuarters)
+  //   }
+  // }, [courseID]);
+
 
   return (
     <>
       <Head>
-        <title>Web 3.0 and Metaverse Program Details</title>
-        <meta name="description" content="Web 3.0 and Metaverse Program Details"/>
+        <title>{program?.title}</title>
+        <meta name="description" content={program?.title}/>
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
         <link rel="icon" href="/favicon.ico"/>
       </Head>
       <Container maxWidth="7xl" px={{base: 2, sm: 10}} py={{base: 8, sm: 10}} scrollMarginTop={16}>
-        <Heading as={'h3'} fontSize={{base: '2xl', md: '4xl'}} fontWeight="bold" mb={18} textAlign="center">
-          Details of Web 3.0 and Metaverse Development Program
-        </Heading>
-        {metaverseCourseDetails.map((detail, index) => (
+        <Box mb={5}>
+          <Heading as={'h3'} fontSize={{base: '2xl', md: '4xl'}} fontWeight="bold" mb={18} textAlign="center">
+            {program?.title}
+          </Heading>
+          <Text color={'gray.600'} textAlign={{base: 'justify', md: 'center'}} fontWeight={'thin'}>
+            {program?.description}
+          </Text>
+        </Box>
+        {program?.quarters.map((detail, index) => (
           <Flex key={index} mb="10px">
             {/* Desktop view(left card) */}
             {isDesktop && detail.quarterNumber % 2 === 0 && (
@@ -105,8 +129,8 @@ const Card = ({duration, quarterNumber, title, isCore, syllabus}: CourseQuarter)
           display: 'block'
         }}
       >
-        <Box>
-          <Flex flexDirection={'row'} alignItems={'center'} justifyContent={'space-between'}>
+        <Box w={'full'}>
+          <Flex flexDirection={'row'} alignItems={'center'} justifyContent={'space-between'} >
             <Text fontSize="lg" color={'panaverseRed'}>
               {duration}
             </Text>
@@ -182,4 +206,20 @@ const DetailCard = ({description}: { description: string }) => {
   );
 };
 
+
+
+export async function getServerSideProps(context) {
+  // console.log("Context Params: ", context.params.courseID)
+  const courseID =  context.params.courseID;
+  let programQuarters = null;
+  if (courseID) {
+    programQuarters = programDetail.find((item) => item.id.toString() === courseID.toString())
+
+  }
+  return {
+    props: {
+      programQuarters
+    }, // will be passed to the page component as props
+  }
+}
 export default CourseDetails
