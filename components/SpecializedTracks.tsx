@@ -28,6 +28,7 @@ export const SpecializedTracks = () => {
               minH={{md: 'calc(100vh)'}}
               justifyContent={'space-between'}
               alignItems={'center'}
+              marginY={{base: 20, md: 0}}
             >
               <Flex
                 zIndex={1}

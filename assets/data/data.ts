@@ -61,7 +61,7 @@ export const coreCoursesCards: CourseCardType[] = [
     image: TSLogo,
     title: 'Object-Oriented Programming using TypeScript',
     description: 'We will start the program by learning the fundamentals of Object-Oriented programming using JavaScript and TypeScript. We will also understand the latest Web trends i.e. Web 3.0 and Metaverse concepts and try to understand their working from the perspective of the users.',
-    linkTo: 'metaverseCourseDetails#1',
+    linkTo: '/courseDetails/1#1',
     isCore: true,
     quarter: "I"
   },
@@ -70,7 +70,7 @@ export const coreCoursesCards: CourseCardType[] = [
     image: LambdaLogo,
     title: 'Developing Planet-Scale Web 2.0 Serverless Cloud Apps and APIs using Next.js 13 and Cloud Development Kit (CDK) for Terraform',
     description: 'The objective of this course is to teach participants to develop customer-facing planet-scale Websites, Full-Stack Apps and templates, Dashboards, and Muti-Cloud Serverless APIs.The technologies covered in this course will include Next.js 13, Figma, Tailwind CSS, Chakra UI, tRPC, QraphQL, Prisma, Cockroachdb Serverless (PostgreSQL Compatible), AWS Serverless Technologies, and Cloud Development Kit for Terraform (CDKTF).',
-    linkTo: 'metaverseCourseDetails#2',
+    linkTo: '/courseDetails/1#2',
     isCore: true,
     quarter: "II"
   }, {
@@ -78,7 +78,7 @@ export const coreCoursesCards: CourseCardType[] = [
     image: DollarLogo,
     title: 'Dollar Making Bootcamp - Full-Stack Template and API Product Development',
     description: 'Develop Web 3.0 Templates and GraphQL APIs to sell and earn Dollars',
-    linkTo: 'metaverseCourseDetails#',
+    linkTo: '/courseDetails/1#3',
     isCore: true,
     quarter: "III"
   },
