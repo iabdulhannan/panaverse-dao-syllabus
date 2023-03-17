@@ -19,7 +19,7 @@ import {router} from "next/client";
 import {useRouter} from "next/router";
 
 
-const CourseDetails = ({programQuarters}) => {
+const CourseDetails = ({programQuarters}:{programQuarters: ProgramDetailType}) => {
   const isMobile = useBreakpointValue({base: true, md: false});
   const isDesktop = useBreakpointValue({base: false, md: true});
   const router = useRouter();
@@ -208,7 +208,7 @@ const DetailCard = ({description}: { description: string }) => {
 
 
 
-export async function getServerSideProps(context) {
+export async function getServerSideProps(context: any) {
   // console.log("Context Params: ", context.params.courseID)
   const courseID =  context.params.courseID;
   let programQuarters = null;
