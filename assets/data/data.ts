@@ -690,7 +690,8 @@ export const specializedTracks = [
     title: 'Ambient Computing and IoT Specialization',
     description: 'The Ambient Computing and IoT Specialization focuses on building Smart Homes, Offices, Factories, and Cities using Voice computing, Matter Protocol, and Embedded Devices',
     linkTo: '/courseDetails/1',
-    imageURL: '/images/png-transparent-internet-of-things-narrowband-iot-radio-frequency-identification-telecommunication-verizon-text-logo-mobile-payment.png'
+    // imageURL: '/images/png-transparent-internet-of-things-narrowband-iot-radio-frequency-identification-telecommunication-verizon-text-logo-mobile-payment.png'
+    imageURL: '/images/iot.svg'
   }, {
     id: 2,
     title: 'Artificial Intelligence (AI) and Deep Learning Specialization',
@@ -708,13 +709,15 @@ export const specializedTracks = [
     title: 'Genomics and Bioinformatics Specialization',
     description: 'Genomics is the study of the total genetic makeup of individual organisms, and how this genetic information is structured, functions, and has evolved; bioinformatics encompasses a diverse range of analytical methods and tools applied to genomic data. This Specialization focuses on performing complex bioinformatics analysis using the most essential Python libraries and applications',
     linkTo: '/courseDetails/4',
-    imageURL: '/images/bioInformatics.webp'
+    // imageURL: '/images/bioInformatics.webp'
+    imageURL: '/images/bioInformatics.svg'
   }, {
     id: 5,
     title: 'Network Programmability and Automation Specialization',
     description: 'More than ever, network engineers are finding it challenging to complete their duties entirely manually. Network automation is now crucial due to new protocols, technologies, delivery models, and the requirement for enterprises to become more adaptable and agile. This course teaches network engineers how to automate systems with code using a variety of technologies and tools, including Linux, Python, APIs, and Git',
     linkTo: '/courseDetails/5',
-    imageURL: '/images/half-man-wearing-vr-headset-portrait-human-user-social-media-avatar-in-metaverse-world-free-png.webp'
+    // imageURL: '/images/half-man-wearing-vr-headset-portrait-human-user-social-media-avatar-in-metaverse-world-free-png.webp'
+    imageURL: '/images/networkProgramming.svg'
   }, {
     id: 6,
     title: 'Web 3.0 (Blockchain) and Metaverse Specialization',
