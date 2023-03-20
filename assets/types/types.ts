@@ -4,6 +4,7 @@ export interface DropdownData {
     courseName: string,
     subtitle: string
     linkTo: string;
+    id?: number
   }>,
 }
 

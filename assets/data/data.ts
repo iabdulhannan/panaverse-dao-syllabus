@@ -27,26 +27,32 @@ export const dropdownData: DropdownData[] = [
         courseName: 'Ambient Computing and IoT Specialization',
         subtitle: 'Quarter IV & V',
         linkTo: '/courseDetails/1',
+        id: 1,
       }, {
         courseName: 'Artificial Intelligence (AI) and Deep Learning Specialization',
         subtitle: 'Quarter IV & V',
         linkTo: '/courseDetails/2',
+        id: 2,
       }, {
         courseName: 'Cloud-Native Computing Specialization',
         subtitle: 'Quarter IV & V',
         linkTo: '/courseDetails/3',
+        id: 3,
       }, {
         courseName: 'Genomics and Bioinformatics Specialization',
         subtitle: 'Quarter IV & V',
         linkTo: '/courseDetails/4',
+        id: 4,
       }, {
         courseName: 'Network Programmability and Automation Specialization',
         subtitle: 'Quarter IV & V',
         linkTo: '/courseDetails/5',
+        id: 5,
       }, {
         courseName: 'Web 3.0 (Blockchain) and Metaverse Specialization',
         subtitle: 'Quarter IV & V',
         linkTo: '/courseDetails/6',
+        id: 6,
       },
     ],
   }

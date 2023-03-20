@@ -13,13 +13,13 @@ import {
 } from '@chakra-ui/react';
 import Head from "next/head";
 import {DottedSeparator} from "daoRoot/components/DottedSeparator";
-import {metaverseCourseDetails, programDetail} from "daoRoot/assets/data/data";
+import {dropdownData, metaverseCourseDetails, programDetail} from "daoRoot/assets/data/data";
 import {CourseQuarter, ProgramDetailType} from "daoRoot/assets/types/types";
 import {router} from "next/client";
 import {useRouter} from "next/router";
 
 
-const CourseDetails = ({programQuarters}:{programQuarters: ProgramDetailType}) => {
+const CourseDetails = ({programQuarters}: { programQuarters: ProgramDetailType }) => {
   const isMobile = useBreakpointValue({base: true, md: false});
   const isDesktop = useBreakpointValue({base: false, md: true});
   const router = useRouter();
@@ -130,7 +130,7 @@ const Card = ({duration, quarterNumber, title, isCore, syllabus}: CourseQuarter)
         }}
       >
         <Box w={'full'}>
-          <Flex flexDirection={'row'} alignItems={'center'} justifyContent={'space-between'} >
+          <Flex flexDirection={'row'} alignItems={'center'} justifyContent={'space-between'}>
             <Text fontSize="lg" color={'panaverseRed'}>
               {duration}
             </Text>
@@ -207,10 +207,25 @@ const DetailCard = ({description}: { description: string }) => {
 };
 
 
+export async function getStaticPaths() {
 
-export async function getServerSideProps(context: any) {
+
+  const paths = dropdownData[1].items.map(course => {
+    return {
+      params: {
+        courseID: `${course.id}`
+      }
+    }
+  })
+  return {
+    paths,
+    fallback: false
+  }
+}
+
+export async function getStaticProps(context: any) {
   // console.log("Context Params: ", context.params.courseID)
-  const courseID =  context.params.courseID;
+  const courseID = context.params.courseID;
   let programQuarters = null;
   if (courseID) {
     programQuarters = programDetail.find((item) => item.id.toString() === courseID.toString())
@@ -222,4 +237,6 @@ export async function getServerSideProps(context: any) {
     }, // will be passed to the page component as props
   }
 }
+
+
 export default CourseDetails

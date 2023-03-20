@@ -24,3 +24,4 @@ export default function Home() {
     </>
   );
 }
+// http://localhost:3000/courseDetails/1
